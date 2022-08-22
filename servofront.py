@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+
+from smbus import SMBus
+
+
+servoT=SMBus(5) #sensor 1 is port3, then sensor3 is port5 (5)  [servo=sensor 3,motor=sensor4]
+servoT.write_i2c_block_data(0x01, 0x48, [0xaa])
+servoT.write_i2c_block_data(0x01, 0x42, [255])
